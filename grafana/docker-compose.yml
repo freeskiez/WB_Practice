@@ -1,0 +1,7 @@
+services:
+  grafana:
+    image: freeskiez-grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    mem_limit: 512m

@@ -1,0 +1,19 @@
+Билд локально:
+docker build -t freeskiez-grafana .
+
+для Docker:
+docker run -d --name=grafana -p 3000:3000 --memory=512m --restart=unless-stopped freeskiez-grafana
+
+для Docker-compose:
+docker-compose up -d
+
+
+Билд и пуш для ghcr:
+docker build -t ghcr.io/freeskiez/freeskiez-grafana:latest .
+docker push ghcr.io/freeskiez/freeskiez-grafana:latest
+docker pull ghcr.io/freeskiez/freeskiez-grafana:latest
+
+
+
+http://localhost:3000  # проверить в браузере
+креды: admin:admin123
