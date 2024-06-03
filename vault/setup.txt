@@ -1,0 +1,20 @@
+Билд локально:
+docker build -t freeskiez-vault .
+
+для Docker:
+docker run -d --name=vault -p 8200:8200 --memory=512m --restart=unless-stopped freeskiez-vault
+
+
+для Docker-compose:
+docker-compose up -d
+
+
+Билд и пуш для ghcr:
+docker build -t ghcr.io/freeskiez/freeskiez-vault:latest .
+docker push ghcr.io/freeskiez/freeskiez-vault:latest
+docker pull ghcr.io/freeskiez/freeskiez-vault:latest
+
+
+
+http://localhost:8200  # проверить в браузере
+token: root

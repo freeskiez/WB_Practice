@@ -1,0 +1,16 @@
+services:
+  vault:
+    image: vault:1.10.4
+    container_name: vault
+    ports:
+      - "8200:8200"
+    restart: unless-stopped
+    mem_limit: 512m
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "root"
+      VAULT_DEV_LISTEN_ADDRESS: "0.0.0.0:8200"
+    volumes:
+      - vault-data:/vault/data
+
+volumes:
+  vault-data:
